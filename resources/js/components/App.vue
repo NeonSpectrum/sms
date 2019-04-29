@@ -1,6 +1,6 @@
 <template>
-  <div>
-   <!--  <div class="h-100">
+  <div class="h-100">
+    <div class="h-100" v-if="$user">
       <div>
         <Navbar />
       </div>
@@ -9,7 +9,7 @@
         <router-view />
       </div>
     </div>
- -->    <div><router-view /></div>
+    <div class="h-100" v-else><router-view /></div>
   </div>
 </template>
 <script >

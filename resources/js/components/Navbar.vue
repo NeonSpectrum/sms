@@ -12,7 +12,7 @@
       <div class="header-sidebar " slot="header">
         <div>
           <b>Schmx</b><br />
-          Student Manager
+          Student Manager {{ $userType.type }}
         </div>
         <vs-divider position="left"></vs-divider>
         <vs-avatar size="70px" src="../../images/rustle.jpg" />
@@ -21,7 +21,16 @@
           <vs-button color="primary"  type="flat"></vs-button>
         </h4> -->
       </div>
-      <vs-sidebar-item index="1" to="/dashboard">
+      <vs-sidebar-item
+        :index="index + 1"
+        v-for="(item, index) in $urls[$userType.type]"
+        :key="index"
+        :to="item.url"
+      >
+        {{ item.title }}
+      </vs-sidebar-item>
+
+      <!-- <vs-sidebar-item index="1" to="/dashboard">
         Dashboard
       </vs-sidebar-item>
       <vs-sidebar-item index="2" to="/profile">
@@ -31,16 +40,12 @@
         Grades
       </vs-sidebar-item>
 
-      <!--  <vs-divider  position="left">
-        User
-      </vs-divider>
- -->
-      <vs-sidebar-item index="4" to="/grades">
+      <vs-sidebar-item index="4" to="/ledger">
         Ledger
-      </vs-sidebar-item>
+      </vs-sidebar-item> -->
 
       <div class="footer-sidebar" slot="footer">
-        <vs-button color="danger" type="flat"
+        <vs-button color="danger" type="flat" @click="logOut"
           ><span class="dark-blue-text">Sign Out <i class="fa fa-sign-out"></i></span
         ></vs-button>
         <vs-button color="primary" type="border"> <i class="fa fa-cog"></i></vs-button>
@@ -53,7 +58,20 @@
 export default {
   data: () => ({
     active: false
-  })
+  }),
+
+  methods: {
+    logOut() {
+      this.axios
+        .post('logout')
+        .then(({ data }) => {
+          if (data.success === true) {
+            location.href = '/'
+          }
+        })
+        .catch(() => alert('Error submitting the form'))
+    }
+  }
 }
 </script>
 

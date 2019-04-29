@@ -15,4 +15,11 @@ class AuthController extends Controller {
     }
     return response()->json(['success' => false, 'message' => 'Invalid Username and/or Password.']);
   }
+  /**
+   * @param Request $request
+   */
+  public function logout() {
+    Auth::logout();
+    return response()->json(['success' => true, 'message' => 'Something went wrong']);
+  }
 }

@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <base href="{{ url('/') }}">
-<link href="https://cdn.jsdelivr.net/npm/vuesax/dist/vuesax.css" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +12,9 @@
 <body>
   <div id="app"></div>
 
-
-
- <script>window.config=@json($config ?? [])</script>
- <script src="{{ mix('js/app.js') }}"></script>
+  <script>
+    window.config=@json($config)
+  </script>
+  <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
           System
         </div> -->
       </b-col>
-      <b-col md="6" style="background-color:white"></b-col>
+      <b-col md="6"></b-col>
     </b-row>
     <div class="d-flex justify-content-center align-items-center h-100">
       <b-card class="shadow login w-23">
@@ -63,14 +63,14 @@ export default {
   methods: {
     login(e) {
       this.submitting = true
-
       this.axios
         .post('login', this.form)
         .then(({ data }) => {
           if (data.success === true) {
             location.href = '/dashboard'
+          } else {
+            alert('Incorrect Credentials')
           }
-
           e.target.reset()
         })
         .catch(() => alert('Error submitting the form'))

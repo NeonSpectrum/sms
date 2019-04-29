@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="content">
     <b-row>
       <b-col>
         <b-row>
           <b-col>
-            <b>Subjects</b> <a href="#"><i class="fa fa-external-link outer-link"></i></a>
+            <b>Subjects</b>
+            <a href="/subject"><i class="fa fa-external-link outer-link"></i></a>
             <div class="div-content shadow">
               <ul class="list">
                 <li>
@@ -19,7 +20,7 @@
             </div>
           </b-col>
           <b-col>
-            <b>Today's Task</b> <a href="#"><i class="fa fa-external-link outer-link"></i></a>
+            <b>Today's Task</b> <a href="/subject"><i class="fa fa-external-link outer-link"></i></a>
             <div class="div-content shadow">
               <ul class="list">
                 <li>
@@ -36,6 +37,7 @@
         </b-row>
         <b-row>
           <b-col>
+            <br />
             <b>Announcements</b> <a href="#"><i class="fa fa-external-link outer-link"></i></a>
             <div class="div-content shadow anouncement" style="height:250px">
               <b-row>
@@ -79,7 +81,11 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  created() {
+    console.log(window.config.user.username)
+  }
+}
 </script>
 <style lang="scss" scoped>
 .anouncement {
@@ -89,9 +95,7 @@ export default {}
 img {
   object-fit: cover;
 }
-.col {
-  margin: 20px !important;
-}
+
 i {
   line-height: 1.6;
   color: gray;
