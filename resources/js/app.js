@@ -27,19 +27,19 @@ Vue.use(VueGlobalVariable, {
       return url.resolve(window.config.url.storage + '/', path)
     },
     urls: {
-      student: [
+      Student: [
         { title: 'Dashboard', url: '/dashboard' },
         { title: 'Profile', url: '/profile' },
         { title: 'Grades', url: '/grades' },
         { title: 'Ledger', url: '/ledger' }
       ],
-      faculty: [
+      Faculty: [
         { title: 'Dashboard', url: '/dashboard' },
         { title: 'Profile', url: '/profile' },
         { title: 'Grades', url: '/grades' },
         { title: 'Subject', url: '/subject' }
       ],
-      parent: [
+      Parent: [
         { title: 'Dashboard', url: '/dashboard' },
         { title: 'Student', url: '/student' },
         { title: 'Ledger', url: '/ledger' }

@@ -42,7 +42,7 @@
             <div class="div-content shadow anouncement" style="height:250px">
               <b-row>
                 <b-col cols="3" class="text-center">
-                  <img src="../../images/social.png" height="140px" width="150px" />
+                  <img src="../../../images/social.png" height="140px" width="150px" />
                 </b-col>
                 <b-col>
                   <h4>Title</h4>
@@ -53,7 +53,7 @@
               <vs-divider position="left"></vs-divider>
               <b-row>
                 <b-col cols="3" class="text-center">
-                  <img src="../../images/social.png" height="140px" width="150px" />
+                  <img src="../../../images/social.png" height="140px" width="150px" />
                 </b-col>
                 <b-col>
                   <h4>Title</h4>
@@ -64,7 +64,7 @@
               <vs-divider position="left"></vs-divider>
               <b-row>
                 <b-col cols="3" class="text-center">
-                  <img src="../../images/social.png" height="140px" width="150px" />
+                  <img src="../../../images/social.png" height="140px" width="150px" />
                 </b-col>
                 <b-col>
                   <h4>Title</h4>

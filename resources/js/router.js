@@ -1,11 +1,18 @@
 import VueRouter from 'vue-router'
 
 import Login from './components/Login'
-import Dashboard from './components/Dashboard'
+
+import StudentDashboard from './components/student/Dashboard'
+import FacultyDashboard from './components/faculty/Dashboard'
 import Profile from './components/Profile'
-import Subject from './components/Subject'
-import SubjectContent from './components/SubjectContent'
-import Grades from './components/Grade'
+
+import StudentSubject from './components/student/Subject'
+import FacultySubject from './components/faculty/Subject'
+
+import StudentSubjectContent from './components/student/SubjectContent'
+
+import StudentGrades from './components/student/Grade'
+import FacultyGrades from './components/faculty/Grade'
 import Ledger from './components/Ledger'
 const router = new VueRouter({
   routes: [
@@ -15,7 +22,7 @@ const router = new VueRouter({
     },
     {
       path: '/dashboard',
-      component: Dashboard
+      component: window.config.userType.type == 'Student' ? StudentDashboard : FacultyDashboard
     },
     {
       path: '/profile',
@@ -23,15 +30,15 @@ const router = new VueRouter({
     },
     {
       path: '/subject',
-      component: Subject
+      component: window.config.userType.type == 'Student' ? StudentSubject : FacultySubject
     },
     {
       path: '/subjectcontent',
-      component: SubjectContent
+      component: StudentSubjectContent
     },
     {
       path: '/grades',
-      component: Grades
+      component: window.config.userType.type == 'Student' ? StudentGrades : FacultyGrades
     },
     {
       path: '/ledger',

@@ -12,7 +12,7 @@
       <div class="header-sidebar " slot="header">
         <div>
           <b>Schmx</b><br />
-          Student Manager {{ $userType.type }}
+          {{ $userType.type }} Manager
         </div>
         <vs-divider position="left"></vs-divider>
         <vs-avatar size="70px" src="../../images/rustle.jpg" />
